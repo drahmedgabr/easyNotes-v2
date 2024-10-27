@@ -1,0 +1,109 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+}
+
+html {
+    --main-color: #4855CD;
+    --hover-color: #333d92;
+    --note-background: #dddff5;
+}
+
+h1 {
+    font-family: "Sankofa Display", sans-serif;
+    font-size: 60px;
+    font-weight: 900;
+    color: var(--main-color);
+    margin-left: 15px;
+    margin-top: 10px;
+}
+
+h1 i {
+    font-size: 40px;
+}
+
+/* Start Bottom Div */
+
+#bottomDiv {
+    position: fixed;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    display: flex;
+}
+
+#bottomDiv #homeDiv, #bottomDiv #settingsDiv {
+    width: 50%;
+    height: 12vh;
+    background-color: var(--main-color);
+    color: white;
+    font-size: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid white;
+    transition: 0.5s;
+}
+
+#bottomDiv #homeDiv:hover, #bottomDiv #settingsDiv:hover {
+    cursor: pointer;
+    background-color: var(--hover-color);
+}
+
+/* End Bottom Div */
+
+/* Start Add Note div */
+
+#addNote {
+    font-size: 50px;
+    color: var(--main-color);
+    position: fixed;
+    right: 20px;
+    bottom: 16vh;
+    transition: 0.5s;
+}
+
+#addNote:hover {
+    cursor: pointer;
+    color: var(--hover-color);
+}
+
+/* End Add Note Div */
+
+/* Start EmptyDiv */
+
+#emptyDiv {
+    height: 76vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#emptyDiv div {
+    text-align: center;
+}
+
+#emptyDiv div img {
+    width: 50%;
+    margin-bottom: 5px;
+}
+
+#emptyDiv div h3 {
+    color: var(--hover-color);
+    font-size: 24px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-weight: 600;
+}
+
+/* End EmptyDiv */
+
+/* Start Modal */
+
+#noteInput {
+    width: 100%;
+    font-size: 22px;
+    padding: 10px;
+    outline-color: var(--main-color);
+}
+
+/* End Modal */
