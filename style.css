@@ -74,7 +74,7 @@ h1 i {
 
 #emptyDiv {
     height: 76vh;
-    display: flex;
+    display: none;
     justify-content: center;
     align-items: center;
 }
@@ -107,3 +107,83 @@ h1 i {
 }
 
 /* End Modal */
+
+
+/* Start Login Div */
+
+#loginDiv {
+    height: 70vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#loginDiv div {
+    padding: 30px;
+    text-align: center;
+    background-image: linear-gradient(white, aqua);
+    border: 2px solid darkblue;
+    border-radius: 20px;
+}
+
+#loginDiv div h3 {
+    margin-bottom: 50px;
+    color: darkblue;
+}
+
+#loginDiv div input {
+    width: 80%;
+    padding: 20px;
+    border-radius: 10px;
+    border: 1px solid darkblue;
+    font-size: 20px;
+    background-color: white;
+    outline-color: darkblue;
+}
+
+#loginDiv div button {
+    width: 80%;
+    background-color: var(--main-color);
+    color: white;
+    padding: 20px 40px;
+    font-size: 20px;
+    border: none;
+    border-radius: 10px;
+    transition: 0.5s;
+}
+
+#loginDiv div button:hover {
+    background-color: var(--hover-color);
+}
+
+#loginDiv div #newAccountButton {
+    width: 100%;
+    background-color: transparent;
+    color: darkblue;
+    font-size: 22px;
+}
+
+#loginDiv div #newAccountButton:hover {
+    text-decoration: underline;
+}
+
+@media (max-width: 767px) {
+    #loginDiv div {
+        padding: 10px;
+    }
+
+    #loginDiv div h3 {
+        margin-bottom: 20px;
+    }
+
+    #loginDiv div button {
+        padding: 10px 20px;
+    }
+
+    #loginDiv {
+        height: 60vh;
+    }
+
+}
+
+/* End Login Div */
