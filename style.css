@@ -55,7 +55,7 @@ h1 i {
 /* Start Add Note div */
 
 #addNote {
-    display: none;
+    display: block;
     font-size: 50px;
     color: var(--main-color);
     position: fixed;
@@ -75,7 +75,7 @@ h1 i {
 
 #emptyDiv {
     height: 76vh;
-    display: none;
+    display: flex;
     justify-content: center;
     align-items: center;
 }
@@ -114,7 +114,7 @@ h1 i {
 
 #loginDiv {
     height: 75vh;
-    display: flex;
+    display: none;
     justify-content: center;
     align-items: center;
 }
