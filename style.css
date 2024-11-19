@@ -9,6 +9,14 @@ html {
     --note-background: #dddff5;
 }
 
+p {
+    margin: 0;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
 h1 {
     font-family: "Sankofa Display", sans-serif;
     font-size: 60px;
@@ -257,3 +265,29 @@ h1 i {
 }
 
 /* End SignupDiv */
+
+/* Start NotesDiv */
+
+#notesDiv {
+    height: 75vh;
+    display: none;
+}
+
+#notesDiv div {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    background-color: #d1d5fe;
+    font-size: 22px;
+    color: #292f6d;
+    border-bottom: 1px solid #292f6d;
+}
+
+#notesDiv #lastDiv {
+    height: 30vh;
+    background-color: white;
+    border: none;
+}
+
+/* End NotesDiv */
