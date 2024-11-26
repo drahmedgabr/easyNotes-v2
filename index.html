@@ -25,11 +25,11 @@
 
     <div id="bottomDiv">
 
-        <div id="homeDiv">
+        <div id="homeDiv" onclick="showHome()">
             <i class="bi bi-house-door-fill"></i>
         </div>
 
-        <div id="settingsDiv">
+        <div id="settingsDiv" onclick="showLoginPage()">
             <i class="bi bi-person-fill"></i>
         </div>
 
@@ -96,7 +96,7 @@
         <br><br>
         <button>Login</button>
         <br><br>
-        <button id="newAccountButton">or create new account</button>
+        <button id="newAccountButton" onclick="showSignupPage()">or create new account</button>
       </div>
     </div>
 
@@ -126,6 +126,21 @@
     </div>
 
     <!-- End Notes Div -->
+
+  <!-- Start UserDiv -->
+
+    <div id="userDiv">
+      <div>
+        <h3>Welcome Ahmed</h3>
+        <button>Upload Notes</button>
+        <br><br>
+        <button>Download Notes</button>
+        <br><br>
+        <button>Logout</button>
+      </div>
+    </div>
+
+    <!-- End UserDiv  -->
 
 </body>
 </html>

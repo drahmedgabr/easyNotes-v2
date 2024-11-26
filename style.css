@@ -291,3 +291,58 @@ h1 i {
 }
 
 /* End NotesDiv */
+
+/* Start User Div */
+
+#userDiv {
+    height: 75vh;
+    display: none;
+    justify-content: center;
+    align-items: center;
+}
+
+#userDiv div {
+    width: 90%;
+    max-width: 600px;
+    padding: 30px;
+    text-align: center;
+    background-image: linear-gradient(white, aqua);
+    border: 2px solid darkblue;
+    border-radius: 20px;
+}
+
+#userDiv div h3 {
+    margin-bottom: 50px;
+    color: darkblue;
+}
+
+#userDiv div button {
+    width: 80%;
+    background-color: var(--main-color);
+    color: white;
+    padding: 20px 40px;
+    font-size: 20px;
+    border: none;
+    border-radius: 10px;
+    transition: 0.5s;
+}
+
+#userDiv div button:hover {
+    background-color: var(--hover-color);
+}
+
+@media (max-width: 767px) {
+    #userDiv div {
+        padding: 20px;
+    }
+
+    #userDiv div h3 {
+        margin-bottom: 20px;
+    }
+
+    #userDiv div button {
+        padding: 10px 20px;
+    }
+}
+
+/* End userDiv */
