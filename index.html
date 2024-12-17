@@ -94,7 +94,7 @@
         <br><br>
         <input type="password" placeholder="Enter your password" id="loginPassword">
         <br><br>
-        <button>Login</button>
+        <button onclick="loginUser()">Login</button>
         <br><br>
         <button id="newAccountButton" onclick="showSignupPage()">or create new account</button>
       </div>
@@ -141,6 +141,16 @@
     </div>
 
     <!-- End UserDiv  -->
+
+    <!-- Start notificationDiv -->
+
+    <div id="notificationDiv">
+      <p id="messageText">Login Failed .. Email or Password is not correct</p>
+      <i class="bi bi-x-lg" onclick="closeNotification()"></i>
+    </div>
+
+    <!-- End notificationDiv -->
+
 
 </body>
 </html>

@@ -346,3 +346,46 @@ h1 i {
 }
 
 /* End userDiv */
+
+/* Start notificationDiv */
+
+#notificationDiv {
+    position: fixed;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    background-color: red;
+    color: white;
+    display: none;
+    justify-content: space-between;
+    padding: 20px 10px;
+    font-size: 18px;
+    align-items: center;
+    animation-duration: 1s;
+    animation-fill-mode: forwards;
+}
+
+#notificationDiv i {
+    font-size: 24px;
+}
+
+#notificationDiv i:hover {
+    cursor: pointer;
+    font-size: 26px;
+}
+
+@keyframes closeNotificationAnim {
+    
+    to {
+        bottom: -110%;
+    }
+
+}
+
+@keyframes openNotificationAnim {
+    to {
+        bottom: 0;
+    }
+}
+
+/* End notificationDiv */
