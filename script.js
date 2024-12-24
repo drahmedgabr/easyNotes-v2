@@ -8,6 +8,8 @@ const loginEmail = document.getElementById("loginEmail");
 const loginPassword = document.getElementById("loginPassword");
 const notificationDiv = document.getElementById("notificationDiv");
 const messageText = document.getElementById("messageText");
+const userNameText = document.getElementById("userNameText");
+
 
 var notesArray = [];
 
@@ -87,15 +89,26 @@ function showNotes() {
 }
 
 function showLoginPage() {
+
+    const userName = localStorage.getItem("userName");
+
+    if (userName == null) {
+        loginDiv.style.display = "flex";
+    } else {
+        userDiv.style.display = "flex";
+        userNameText.innerText = userName;
+    }
+
     notesDiv.style.display = "none";
     emptyDiv.style.display = "none";
-    loginDiv.style.display = "flex";
+    
 }
 
 function showHome() {
     emptyDiv.style.display = "flex";
     loginDiv.style.display = "none";
     signupDiv.style.display = "none";
+    userDiv.style.display = "none";
     getNotes();
 }
 
@@ -112,7 +125,7 @@ async function loginUser() {
         const apiUrl = `https://tatbeqak.site/apps/tatbeqey/apps/easynotes/login?email=${loginEmail.value}&password=${loginPassword.value}`;
 
         const response = await fetch(apiUrl);
-        const data = await response.json();
+        const data = await response.json();        
         
         const status = data.status;
 
@@ -120,6 +133,13 @@ async function loginUser() {
             
             loginDiv.style.display = "none";
             userDiv.style.display = "flex";
+
+            const userName = data.name;
+            const userId = data.id;
+            localStorage.setItem("userName", userName);
+            localStorage.setItem("userId", userId);
+
+            userNameText.innerText = userName;
 
         } else {
             openNotification("Login Failed .. email or password is not correct!");
@@ -141,3 +161,32 @@ function closeNotification() {
     
 }
 
+
+function logoutUser() {
+    localStorage.removeItem("userName");
+    localStorage.removeItem("userId");
+    showHome();
+}
+
+async function downloadNotes() {
+    
+    const userId = localStorage.getItem("userId");
+
+    const apiUrl = `https://tatbeqak.site/apps/tatbeqey/apps/easynotes/getnotes?id=${userId}`;
+
+    const response = await fetch(apiUrl);
+    const data = await response.json();
+
+    const notesString = data.notes;
+    
+    const downloadedArray = JSON.parse(notesString);
+
+    if (downloadedArray.length == 0) {
+        openNotification("No notes found in server");
+    } else {
+        notesArray = downloadedArray;
+        saveNotes();
+        showHome();
+    }
+
+}
