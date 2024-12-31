@@ -18,7 +18,7 @@ getNotes();
 function addNote() {
     const newNote = noteInput.value;
     if(newNote == ""){
-        openNotification("Please enter your note");
+        openNotification("Please enter your note", "blue");
     } else {
         notesArray.push(newNote);
         noteInput.value = "";
@@ -120,7 +120,7 @@ function showSignupPage() {
 async function loginUser() {
 
     if (loginEmail.value == "" || loginPassword.value == "") {
-        openNotification("Please enter your email and password");
+        openNotification("Please enter your email and password", "blue");
     } else {
         const apiUrl = `https://tatbeqak.site/apps/tatbeqey/apps/easynotes/login?email=${loginEmail.value}&password=${loginPassword.value}`;
 
@@ -142,7 +142,7 @@ async function loginUser() {
             userNameText.innerText = userName;
 
         } else {
-            openNotification("Login Failed .. email or password is not correct!");
+            openNotification("Login Failed .. email or password is not correct!", "red");
         }
         
     }
@@ -150,10 +150,11 @@ async function loginUser() {
 }
 
 
-function openNotification(message) {
+function openNotification(message, background) {
     messageText.innerText = message;
     notificationDiv.style.display = "flex";
     notificationDiv.style.animationName = "openNotificationAnim";
+    notificationDiv.style.backgroundColor = background;
 }
 
 function closeNotification() {
@@ -182,11 +183,32 @@ async function downloadNotes() {
     const downloadedArray = JSON.parse(notesString);
 
     if (downloadedArray.length == 0) {
-        openNotification("No notes found in server");
+        openNotification("No notes found in server", "red");
     } else {
         notesArray = downloadedArray;
         saveNotes();
         showHome();
+    }
+
+}
+
+
+async function uploadNotes() {
+    
+    const userId = localStorage.getItem("userId");
+
+    const notesString = JSON.stringify(notesArray);
+
+    const apiUrl = `https://tatbeqak.site/apps/tatbeqey/apps/easynotes/addnote?id=${userId}&notes=${notesString}`;
+
+    const response = await fetch(apiUrl);
+
+    const data = await response.json();
+
+    const status = data.status;
+
+    if(status == true){
+        openNotification("Notes uploaded successfully", "green");
     }
 
 }

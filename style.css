@@ -389,3 +389,57 @@ h1 i {
 }
 
 /* End notificationDiv */
+
+
+@media (min-width: 1025px) {
+    
+    #notesDiv div {
+        max-width: 800px;
+        margin: auto;
+        margin-bottom: 25px;
+        border-radius: 10px;
+        border: none;
+        box-shadow: 0 5px 10px rgba(2, 2, 64, 0.454);
+        font-size: 28px;
+        padding: 30px;
+    }
+
+    #lastDiv {
+        display: none !important;
+    }
+
+    #bottomDiv {
+        height: 24vh;
+        top: 50%;
+        transform: translate(0, -50%);
+        right: -4.5%;
+        left: auto;
+        flex-direction: column;
+        justify-content: center;
+        width: 100px;
+        transition: 0.5s;
+        border: 10px solid var(--main-color);
+        border-right: 0;
+    }
+
+    #bottomDiv:before {
+        content: "";
+        width: 0;
+        height: 0;
+        border: 20px solid;
+        border-color: transparent var(--main-color) transparent transparent;
+        position: absolute;
+        right: 100px;
+    }
+    
+    #bottomDiv #homeDiv, #bottomDiv #settingsDiv {
+        width: 100%;
+        height: 12vh;
+        border: none;
+    }
+
+    #bottomDiv:hover {
+        right: 0;
+    }
+
+}
